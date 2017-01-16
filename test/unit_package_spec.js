@@ -7,7 +7,7 @@ describe('Unit::deployable-assets', function(){
     let assets = null
 
     beforeEach(function(){
-      assets = new DeployableAssets({ prefix: '/wat' })
+      assets = new DeployableAssets({ prefix: '/some_url' })
     })
  
     it('should do something with module', function(){
@@ -15,11 +15,15 @@ describe('Unit::deployable-assets', function(){
     })
 
     it('should do js', function(){
-      expect( assets.js('something') ).to.equal( '<script src="/wat/something" type="application/javascript"></script>' )
+      expect( assets.js('something.js') ).to.equal( '<script src="/some_url/something.js" type="application/javascript"></script>' )
     })
 
     it('should do css', function(){
-      expect( assets.css('otherthing') ).to.equal( '<link rel="stylesheet" type="text/css" href="/wat/otherthing"/>' )
+      expect( assets.css('otherthing.css') ).to.equal( '<link rel="stylesheet" type="text/css" href="/some_url/otherthing.css"/>' )
+    })
+ 
+    it('should return a plain path', function(){
+      expect( assets.path('img/upload.png') ).to.equal('/some_url/img/upload.png')
     })
 
   })
