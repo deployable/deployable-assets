@@ -1,6 +1,6 @@
 {
   "name": "deployable-assets",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "description": "Web Asset Handlers",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/deployable/node-deployable-assets.git"
   },
-  "keywords": ["deployable","module"],
+  "keywords": [
+    "deployable",
+    "module"
+  ],
   "author": "Matt Hoyle <code at deployable.co>",
   "license": "MIT",
   "bugs": {
@@ -25,7 +28,5 @@
     "chai": "^3.5.0",
     "mocha": "^3.1.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
-
