@@ -5,7 +5,10 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
-    "test:debug": "DEBUG='*' mocha debug"
+    "test:debug": "DEBUG='*' mocha debug",
+    "test:watch": "mocha -w",
+    "npm:publish": "npm test && [ -z \"$(git status --porcelain)\" ] && npm version patch && npm publish",
+    "npm:pubtest": "npm test && npm version prerelease && npm publish --tag testing"
   },
   "repository": {
     "type": "git",
