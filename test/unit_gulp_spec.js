@@ -28,22 +28,22 @@ describe('Unit::Gulp', function(){
 
     it('should get a src via addSrc', function(){
       let task = glp.addGroup('test').getTask('testTask')
-      expect( task.addSrc('test/fixture/one') ).to.be.ok
+      expect( task.addSrc('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a src via addGlob', function(){
       let task = glp.addGroup('test').getTask('testTask')
-      expect( task.addGlob('test/fixture/one') ).to.be.ok
+      expect( task.addGlob('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a dest', function(){
       let task = glp.addGroup('test').getTask('testTask')
-      expect( task.setDest('test/fixture/out') ).to.be.ok
+      expect( task.setDest('test/fixture/out') ).to.equal(task)
     })
 
     it('should add a copy task', function(){
       let task = glp.addGroup('test').getTask('testTask')
-      expect( task.addCopyTask() ).to.be.undefined
+      expect( task.addCopyTask() ).to.be.true
     })
 
   })
