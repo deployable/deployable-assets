@@ -1,29 +1,38 @@
-const DeployableAssets = require('../')
+const { initial, Gulp, GulpGroups, GulpGroup, GulpGroupTask, DeployableGulp } = require('../')
+const expect = require('chai').expect
 
-describe('Unit::deployable-assets', function(){
+describe('Unit::deployable-assets-gulp', function(){
 
-  describe('Something does something', function(){
-  
-    let assets = null
+  describe('package imports', function(){
 
-    beforeEach(function(){
-      assets = new DeployableAssets({ prefix: '/some_url' })
-    })
- 
-    it('should do something with module', function(){
-      expect( assets ).to.be.ok
+    it('should attach the Gulp class', function(){
+      expect( Gulp ).to.be.ok
     })
 
-    it('should do js', function(){
-      expect( assets.js('something.js') ).to.equal( '<script src="/some_url/something.js" type="application/javascript"></script>' )
+    it('should attach the Gulp class', function(){
+      expect( Gulp.name ).to.equal( 'Gulp' )
     })
 
-    it('should do css', function(){
-      expect( assets.css('otherthing.css') ).to.equal( '<link rel="stylesheet" type="text/css" href="/some_url/otherthing.css"/>' )
+    it('should attach the GulpGroups class', function(){
+      expect( GulpGroups ).to.be.ok
     })
- 
-    it('should return a plain path', function(){
-      expect( assets.path('img/upload.png') ).to.equal('/some_url/img/upload.png')
+
+    it('should attach the GulpGroup task', function(){
+      expect( GulpGroup ).to.be.ok
+    })
+
+    it('should attach the GulpGroupTask', function(){
+      expect( GulpGroupTask ).to.be.ok
+    })
+
+    it('should attach an initial instance', function(){
+      expect( initial ).to.be.ok
+      expect( initial.constructor.name ).to.equal( 'Gulp' )
+    })
+
+    it('should attach the DeployableGulp', function(){
+      expect( DeployableGulp ).to.be.ok
+      expect( DeployableGulp.name ).to.equal( 'DeployableGulp' )
     })
 
   })

@@ -1,32 +1,36 @@
-# [deployable-assets](https://github.com/deployable/deployable-assets)
+# [deployable-assets-gulp](https://github.com/deployable/deployable-assets-gulp)
 
-Web Asset Handlers
-
-Provide helpers for html snippets for assets with a configured path, like
-[connect-assets](https://github.com/adunkman/connect-assets) does but serving
-precompiled assets instead.
+Web Asset Builder
 
 ### Install
+ 
+    npm install deployable-assets-gulp --save-dev
 
-    npm install deployable-assets --save
-
-    yarn add deployable-assets
+    yarn add deployable-assets-gulp --dev
 
 ### Usage
 
+The package provides the Deployable gulp setup as a class
+
 ```javascript
 
-const DeployableAssets = require('deployable-assets')
-const assets = new DeployableAssets({ prefix: '/some_url' })
-assets.js('path/name.js') // => <script src="/some_url/path/name.js" type="application/javascript"></script>
-assets.css('name.css') // => <link rel="stylesheet" type="text/css" href="/some_url/name.css"/>
-assets.path('img/upload.png') //=> /some_url/img/upload.png
+const { DeployableGulp } = require('deployable-assets-gulp')
 
 ```
 
+You can also use, or extend the plain `Gulp` class to include you own flavour of  gulp usage
+
+```javascript
+
+const { Gulp } = require('deployable-assets-gulp')
+
+```
+
+
 ### License
 
-deployable-assets is released under the MIT license.
-Copyright 2016 Matt Hoyle - code at deployable.co
+deployable-assets-gulp is released under the MIT license.
+Copyright 2016 Matt Hoyle - code aatt deployable.co
 
-https://github.com/deployable/deployable-assets
+https://github.com/deployable/deployable-assets-gulp
+

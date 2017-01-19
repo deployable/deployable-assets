@@ -1,14 +1,14 @@
 {
   "name": "deployable-assets",
-  "version": "0.3.0",
-  "description": "Web Asset Handlers",
+  "version": "0.4.0-0",
+  "description": "Deployable web asset management",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
     "test:debug": "DEBUG='*' mocha debug",
-    "test:watch": "mocha -w",
-    "npm:publish": "npm test && [ -z \"$(git status --porcelain)\" ] && npm version patch && npm publish",
-    "npm:pubtest": "npm test && npm version prerelease && npm publish --tag testing"
+    "test:coverage": "istanbul cover _mocha",
+    "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
+    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; git push --tags; npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,21 @@
   "bugs": {
     "url": "https://github.com/deployable/node-deployable-assets/issues"
   },
-  "homepage": "https://github.com/deployable/node-deployable-assets#readme",
+  "homepage": "https://github.com/deployable/deployable-assets#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "chai": "~3.5.0",
+    "deployable-errors": "~0.8.0",
+    "gulp": "~3.9.1",
+    "gulp-babel": "~6.1.2",
+    "gulp-batch": "~1.0.5",
+    "gulp-plumber": "~1.1.0",
+    "gulp-sass": "~3.1.0",
+    "gulp-sequence": "~0.4.6",
+    "gulp-shell": "~0.5.2",
+    "gulp-watch": "~4.3.11",
+    "istanbul": "~0.4.5",
+    "mocha": "~3.1.2",
+    "sinon": "~1.17.6"
   },
   "dependencies": {}
 }

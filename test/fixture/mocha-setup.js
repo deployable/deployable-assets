@@ -1,5 +1,6 @@
 global.chai = require('chai')
-global.expect = chai.expect
+global.sinon = require('sinon')
+global.expect = require('chai').expect
 
 require('bluebird').config({
   longStackTraces: true,
