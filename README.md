@@ -10,7 +10,7 @@ Web Asset Builder. Built on  gulp, babel and sass.
 
 ## Usage
 
-Creating gulp definitions
+### Gulp definitions
 
 ```javascript
 
@@ -32,6 +32,9 @@ group.getTask('buildit')
 
 ```
 
+
+### Runnig defined group tasks
+
 This builds the tasks group `sitecss`. Tasks `copyit` and `buildit` will
 be attached to a group. The tasks are available to run as `sitecss:copyit`
 and `sitecss:buildit` in gulp.
@@ -43,7 +46,10 @@ group asynchronously.
 
     gulp sitecss
 
-Or you can control the [sequence](https://www.npmjs.com/package/gulp-sequence)
+
+### Asynchronouse Sequence control
+
+You can control the [sequence](https://www.npmjs.com/package/gulp-sequence)
 of events with `.sequence()`
 
 ```javascript
@@ -66,6 +72,8 @@ const { DeployableGulp } = require('deployable-assets')
 let gulp_def = new DeployableGulp()
 
 ```
+
+The following tasks are provided
 
 ```bash
 gulp bower        # bower + copy
