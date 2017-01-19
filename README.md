@@ -2,12 +2,12 @@
 
 Web Asset Handlers
 
-Provide helpers for html snippets for assets with a configured path, like 
-[connect-assets](https://github.com/adunkman/connect-assets) does but serving 
+Provide helpers for html snippets for assets with a configured path, like
+[connect-assets](https://github.com/adunkman/connect-assets) does but serving
 precompiled assets instead.
 
 ### Install
- 
+
     npm install deployable-assets --save
 
     yarn add deployable-assets
@@ -27,7 +27,6 @@ assets.path('img/upload.png') //=> /some_url/img/upload.png
 ### License
 
 deployable-assets is released under the MIT license.
-Copyright 2016 Matt Hoyle <code at deployable.co>
+Copyright 2016 Matt Hoyle - code at deployable.co
 
 https://github.com/deployable/deployable-assets
-
