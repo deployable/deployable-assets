@@ -1,6 +1,6 @@
 {
   "name": "deployable-assets",
-  "version": "0.4.1",
+  "version": "0.4.2-0",
   "description": "Deployable web asset management",
   "main": "lib/index.js",
   "scripts": {
@@ -26,7 +26,6 @@
   "homepage": "https://github.com/deployable/deployable-assets#readme",
   "devDependencies": {
     "chai": "~3.5.0",
-    "deployable-errors": "~0.8.0",
     "gulp": "~3.9.1",
     "gulp-babel": "~6.1.2",
     "gulp-batch": "~1.0.5",
@@ -39,5 +38,7 @@
     "mocha": "~3.1.2",
     "sinon": "~1.17.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "deployable-errors": "~0.8.0"
+  }
 }
