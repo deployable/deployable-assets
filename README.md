@@ -1,4 +1,4 @@
-# [deployable-assets-gulp](https://github.com/deployable/deployable-assets-gulp)
+# [deployable-assets](https://github.com/deployable/node-deployable-assets)
 
 Web Asset Builder. Built on  gulp, babel and sass.
 
@@ -45,8 +45,8 @@ DeployableAssets.path('fonts/arial.webf') // =>
 
 ## License
 
-deployable-assets-gulp is released under the MIT license.
+deployable-assetsis released under the MIT license.
 Copyright 2016 Matt Hoyle - code aatt deployable.co
 
-https://github.com/deployable/deployable-assets-gulp
+https://github.com/deployable/node-deployable-assets
 
