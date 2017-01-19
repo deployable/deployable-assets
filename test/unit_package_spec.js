@@ -1,7 +1,7 @@
 const { initial, Gulp, GulpGroups, GulpGroup, GulpGroupTask, DeployableGulp } = require('../')
 const expect = require('chai').expect
 
-describe('Unit::deployable-assets', function(){
+describe('unit::deployable-assets', function(){
 
   describe('package imports', function(){
 

@@ -2,7 +2,7 @@ const expect = require('chai').expect
 const { DeployableGulp } = require('../')
 
 
-describe('Unit::DeployableGulp', function(){
+describe('unit::deployable-assets::DeployableGulp', function(){
 
   describe('class', function(){
 
