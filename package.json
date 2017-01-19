@@ -1,0 +1,42 @@
+{
+  "name": "deployable-assets-gulp",
+  "version": "0.1.0-0",
+  "description": "Web Asset Builder",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:debug": "DEBUG='*' mocha debug",
+    "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
+    "npm:publish": "set -uex; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; git push --tags; npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deployable/node-deployable-assets-gulp.git"
+  },
+  "keywords": [
+    "deployable",
+    "module"
+  ],
+  "author": "Matt Hoyle <code at deployable.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deployable/node-deployable-assets-gulp/issues"
+  },
+  "homepage": "https://github.com/deployable/deployable-assets-gulp#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "~3.9.1",
+    "gulp-babel": "~6.1.2",
+    "gulp-batch": "~1.0.5",
+    "gulp-plumber": "~1.1.0",
+    "gulp-sass": "~3.1.0",
+    "gulp-sequence": "~0.4.6",
+    "gulp-shell": "~0.5.2",
+    "gulp-watch": "~4.3.11",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
+  },
+  "dependencies": {
+    "deployable-errors": "^0.8.0"
+  }
+}
