@@ -17,7 +17,7 @@ describe('unit::deployable-assets::GulpGroup', function(){
     })
 
     it('should set the dest of a task', function(){
-      let tsk = grp.addTask('atsk')
+      let tsk = grp.task('atsk')
       expect( tsk ).to.be.ok
       expect( tsk.name ).to.equal( 'atsk')
     })
@@ -27,19 +27,19 @@ describe('unit::deployable-assets::GulpGroup', function(){
     })
 
     it('should turn group with task into string', function(){
-      grp.addTask('atsk')
+      grp.task('atsk')
       expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk` )
     })
 
     it('should turn group with task into string', function(){
-      grp.addTask('atsk')
+      grp.task('atsk')
       grp.watch('atsk')
       expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk\nsomegroup:watch` )
     })
 
     it('should turn two groups into string', function(){
-      grp.addTask('tsk1')
-      grp.addTask('tsk2')
+      grp.task('tsk1')
+      grp.task('tsk2')
       let json = grp.toJSON()
       expect( json ).to.have.keys('name', 'tasks')
       expect( json.name ).to.equal( 'somegroup' )

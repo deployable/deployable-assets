@@ -1,8 +1,8 @@
 # [Deployable Assets](https://github.com/deployable/node-deployable-assets)
 
-## Web Asset Builder. 
+## Web Asset Builder.
 
-Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/), 
+Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/),
  [sass](https://sass-lang.com/) and `$ shell` out of the box.
 
 Organises your gulp tasks into groups of tasks, `groupname:taskname`
@@ -12,7 +12,7 @@ Group destination can filter down to tasks if you don't override it.
 Group sources filter up so you can access all group sources programatically.
 
 A `:watch` task can be added to groups, or tasks. This will monitor the src files
-and build as needed. 
+and build as needed.
 
 Async sequences can be applied to a group to run sub tasks in order.
 
@@ -28,8 +28,8 @@ Async sequences can be applied to a group to run sub tasks in order.
 
 gulpfile.js
 
-*Note*: Adding the type of gulp task must always be the last step of a task chain. This 
-step builds a gulp task from the previously set varaibles.  
+*Note*: Adding the type of gulp task must always be the last step of a task chain. This
+step builds a gulp task from the previously set varaibles.
 
 ```javascript
 
@@ -41,23 +41,23 @@ let gulp_def = new Gulp()
 let group = gulp_def.addGroup('sitecss')
 
 // Run a command
-group.getTask('runit')
+group.task('runit')
   .createShellTask(['bower install'])
 
 // Copy files
-group.getTask('copyit')
+group.task('copyit')
   .addSrc('bower_components/somecss/dist/*.css')
   .setDest('public/css')
   .createCopyTask()
 
 // Sass
-group.getTask('buildit')
+group.task('buildit')
   .addSrc('src/sass/*.scss')
   .setDest('public/css')
   .createSassTask()
 
 // Custom task, still in a group
-let task = group.getTask('custom')
+let task = group.task('custom')
 task
   .addSrc('src/sass/*.scss')
   .setDest('public/css')
@@ -152,7 +152,7 @@ DeployableAssets.path('fonts/arial.webf') // =>
 
     let group = glp.addGroup('sitecss')
 
-    group.getTask('testTask')
+    group.task('testTask')
       .addSrc('bower_components/jquery/dist/*.js')
       .setDest('public/js')
       .addCopyTask()
