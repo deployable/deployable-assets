@@ -42,26 +42,26 @@ let group = gulp_def.addGroup('sitecss')
 
 // Run a command
 group.getTask('runit')
-  .addShellTask(['bower install'])
+  .createShellTask(['bower install'])
 
 // Copy files
 group.getTask('copyit')
   .addSrc('bower_components/somecss/dist/*.css')
   .setDest('public/css')
-  .addCopyTask()
+  .createCopyTask()
 
 // Sass
 group.getTask('buildit')
   .addSrc('src/sass/*.scss')
   .setDest('public/css')
-  .addSassTask()
+  .createSassTask()
 
 // Custom task, still in a group
 let task = group.getTask('custom')
 task
   .addSrc('src/sass/*.scss')
   .setDest('public/css')
-  .addCustom(()=>{
+  .createCustom(()=>{
     gulp.src(task.src)
       .pipe(whatever())
       .pipe(dest(task.dest))

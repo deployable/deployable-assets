@@ -43,7 +43,7 @@ describe('unit::deployable-assets::Gulp', function(){
 
     it('should add a copy task', function(){
       let task = glp.addGroup('test').getTask('testTask')
-      expect( task.addCopyTask() ).to.be.true
+      expect( task.createCopyTask() ).to.be.true
     })
 
     it('should create a string', function(){
