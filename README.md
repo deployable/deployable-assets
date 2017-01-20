@@ -1,6 +1,6 @@
 # [Deployable Assets](https://github.com/deployable/node-deployable-assets)
 
-Web Asset Builder. Built on gulp. Supports babel, sass and shell out of the box.
+Web Asset Builder. Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/), [sass](https://sass-lang.com/) and `$ shell` out of the box.
 
 Organises gulp tasks into `groupname:taskname`
 
