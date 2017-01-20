@@ -10,30 +10,53 @@ Web Asset Builder. Built on  gulp, babel and sass.
 
 ## Usage
 
-### Gulp definitions
+### Creating a gulp definition
+
+gulpfile.js
 
 ```javascript
 
 const { Gulp } = require('deployable-assets')
+const { gulp } = Gulp
 
 let gulp_def = new Gulp()
 
 let group = gulp_def.addGroup('sitecss')
 
+// Run a command
+group.getTask('runit')
+  .addShellTask(['bower install'])
+
+// Copy files
 group.getTask('copyit')
   .addSrc('bower_components/somecss/dist/*.css')
   .setDest('public/css')
   .addCopyTask()
 
+// Sass
 group.getTask('buildit')
   .addSrc('src/sass/*.scss')
   .setDest('public/css')
   .addSassTask()
 
+// Custom task, still in a group
+let task = group.getTask('custom')
+task
+  .addSrc('src/sass/*.scss')
+  .setDest('public/css')
+  .addCustom(()=>{
+    gulp.src(task.src)
+      .pipe(whatever())
+      .pipe(dest(task.dest))
+  })
+
+// Add a group task so `gulp sitecss` works
+group.sequence('sitecss:runit', ['sitecss:copyit', 'sitecss:buildit'], 'sitecss:custom')
+
 ```
 
 
-### Runnig defined group tasks
+### Running gulp tasks
 
 This builds the tasks group `sitecss`. Tasks `copyit` and `buildit` will
 be attached to a group. The tasks are available to run as `sitecss:copyit`
