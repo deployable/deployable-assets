@@ -1,6 +1,6 @@
 {
   "name": "deployable-assets",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Deployable web asset management",
   "main": "lib/index.js",
   "scripts": {
