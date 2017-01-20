@@ -122,7 +122,9 @@ gulp assets:watch # long running wathcing build
 
 ### Asset Helpers
 
-The package also provides helpers for your apps to build css and js tags with your configure asset paths
+The package also provides a helper class to use in your application to refernce assets.
+All references to your asset paths should be replaced by the helper so assets can be served
+from any location, including the possibiilty of moving them to a CDN.
 
 ```javascript
 
