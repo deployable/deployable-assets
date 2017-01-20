@@ -37,6 +37,12 @@ describe('unit::deployable-assets::GulpGroup', function(){
       expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk\nsomegroup:watch` )
     })
 
+    it('should turn group with task into string', function(){
+      grp.task('atsk')
+      grp.watch()
+      expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk\nsomegroup:watch` )
+    })
+
     it('should turn two groups into string', function(){
       grp.task('tsk1')
       grp.task('tsk2')
@@ -45,6 +51,22 @@ describe('unit::deployable-assets::GulpGroup', function(){
       expect( json.name ).to.equal( 'somegroup' )
       expect( json.tasks ).to.have.keys('tsk1', 'tsk2')
     })
+
+    it('should get globs from tasks', function(){
+      grp.task('tsk1').addSrc('test1')
+      grp.task('tsk2').addSrc('test2')
+      expect( grp.getGlobs() ).to.eql( ['test1', 'test2'] )
+    })
+
+    it('should set a group dest', function(){
+      grp.setDest('test')
+      expect( grp.dest ).to.eql( 'test' )
+    })
+
+    it('should set a group suffix', function(){
+      expect( grp.setSuffix('test') ).to.eql( 'test' )
+    })
+
 
   })
 

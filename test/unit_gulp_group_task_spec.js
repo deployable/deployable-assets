@@ -34,6 +34,11 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
       expect( tsk.globs ).to.eql(['glb'])
     })
 
+    it('should add a glob to a task', function(){
+      let glb = tsk.addGlob('glb')
+      expect( tsk.getGlobs() ).to.eql(['glb'])
+    })
+
     it('should turn the task into a json object', function(){
       tsk.addSrc('src')
       tsk.setDest('dest')
@@ -54,6 +59,41 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
       expect( tsk.toString() ).to.eql('sometask')
     })
 
+  })
+
+  describe('class with parent', function(){
+
+    let tsk = null
+
+    beforeEach( function(){
+      tsk = new GulpGroupTask('sometask')
+      tsk.parent = {name: 'parent'}
+    })
+
+    it('createBabelTask', function(){
+      expect( tsk.createBabelTask() ).to.equal( true )
+    })
+    it('createBabelSourceMapTask', function(){
+      expect( tsk.createBabelSourceMapTask() ).to.equal( true )
+    })
+    it('createSassTask', function(){
+      expect( tsk.createSassTask() ).to.equal( true )
+    })
+    it('createSassSourceMapTask', function(){
+      expect( tsk.createSassSourceMapTask() ).to.equal( true )
+    })
+    it('createShellTask', function(){
+      expect( tsk.createShellTask() ).to.equal( true )
+    })
+    it('run', function(){
+      expect( tsk.run() ).to.equal( true )
+    })
+    it('createSequence', function(){
+      expect( tsk.createSequence(['test']) ).to.equal( true )
+    })
+    it('createCustom', function(){
+      expect( tsk.createCustom() ).to.equal( true )
+    })
   })
 
 })

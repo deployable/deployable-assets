@@ -43,6 +43,28 @@ describe('unit::deployable-assets::GulpGroups', function(){
       expect( grps.toJSON() ).to.have.keys('grp1', 'grp2')
     })
 
+    it('should set a group dest', function(){
+      grps.setDest('test')
+      expect( grps.dest ).to.eql( 'test' )
+    })
+
+    it('should set a group suffix', function(){
+      expect( grps.setSuffix('test') ).to.eql( 'test' )
+    })
+
+    it('should set a group dest', function(){
+      let grp = grps.getGroup('grp1')
+      expect( grp ).to.eql( grps.getGroup('grp1') )
+    })
+
+    it('should get globs for groups', function(){
+      expect( grps.getGlobs() ).to.eql( [] )
+    })
+
+    it('should get globs for groups', function(){
+      grps.addGroup('test').task('test').addGlob('wakka').addGlob('pakka')
+      expect( grps.getGlobs() ).to.eql( ['wakka','pakka'] )
+    })
 
   })
 

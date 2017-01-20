@@ -56,6 +56,15 @@ testa:testTaska`
       expect( glp.toString() ).to.equal(res)
     })
 
+
+    it('should add a glob to a task', function(){
+      glp.addGlob()
+    })
+
+    it('should get the globs for a group', function(){
+      glp.groupGlobs()
+    })
+
     it('should create a json object', function(){
       glp.addGroup('test1').task('testTask1')
       glp.addGroup('test2').task('testTask2')
