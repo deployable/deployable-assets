@@ -158,9 +158,10 @@ DeployableAssets.path('fonts/arial.webf') // =>
       .addCopyTask()
 
 
-## License
+## About
 
-deployable-assetsis released under the MIT license.
+deployable-assets is released under the MIT license.
+
 Copyright 2016 Matt Hoyle - code aatt deployable.co
 
 https://github.com/deployable/node-deployable-assets
