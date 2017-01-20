@@ -8,7 +8,7 @@
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha",
     "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
-    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; git push --tags; npm publish"
+    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
   },
   "repository": {
     "type": "git",
