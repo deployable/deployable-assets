@@ -25,7 +25,8 @@ describe('unit::deployable-assets::DeployableAssets', function(){
     })
 
     it('should create font css', function(){
-      expect( ass.font('Wingdings', 'font/wd.woff') ).to.match( /^@font-face \{[\s\S]+\}$/ )
+      let re = /^<style type="text\/css">\n  @font-face \{[\s\S]+\}\n<\/style>$/
+      expect( ass.font('Wingdings', 'font/wd.woff') ).to.match( re )
     })
 
     it('should create font css with url', function(){
