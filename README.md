@@ -4,8 +4,8 @@ Web Asset Builder. Built on [gulp](https://gulpjs.com). Supports [babel](https:/
 
 Organises gulp tasks into `groupname:taskname`
 
-Watches can be added to groups, or tasks and source files will be automatically 
-populated. No need to write extra tasks for the watch. 
+Watches can be added to groups, or tasks and source files are monitored automatically.
+No need to write extra task, just call `.watch()` and a `:watch` gulp task will be appended.
 
 Async sequences can be applied to a group to run sub tasks in order.
 
