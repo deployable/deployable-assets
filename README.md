@@ -1,6 +1,13 @@
 # [deployable-assets](https://github.com/deployable/node-deployable-assets)
 
-Web Asset Builder. Built on  gulp, babel and sass.
+Web Asset Builder. Built on gulp. Supports babel, sass and shell out of the box.
+
+Organises gulp tasks into `groupname:taskname`
+
+Watches can be added to groups, or tasks and source files will be automatically 
+populated. No need to write extra tasks for the watch. 
+
+Async sequences can be applied to a group to run sub tasks in order.
 
 ## Install
 
