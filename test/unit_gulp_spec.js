@@ -17,38 +17,38 @@ describe('unit::deployable-assets::Gulp', function(){
     })
 
     it('should create a group', function(){
-      let group = glp.addGroup('test')
+      let group = glp.group('test')
       expect( group ).to.be.ok
     })
 
     it('should add a new task to group', function(){
-      let group = glp.addGroup('test')
+      let group = glp.group('test')
       expect( group.task('testTask') ).to.be.ok
     })
 
     it('should get a src via addSrc', function(){
-      let task = glp.addGroup('test').task('testTask')
+      let task = glp.group('test').task('testTask')
       expect( task.addSrc('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a src via addGlob', function(){
-      let task = glp.addGroup('test').task('testTask')
+      let task = glp.group('test').task('testTask')
       expect( task.addGlob('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a dest', function(){
-      let task = glp.addGroup('test').task('testTask')
+      let task = glp.group('test').task('testTask')
       expect( task.setDest('test/fixture/out') ).to.equal(task)
     })
 
     it('should add a copy task', function(){
-      let task = glp.addGroup('test').task('testTask')
+      let task = glp.group('test').task('testTask')
       expect( task.createCopyTask() ).to.be.true
     })
 
     it('should create a string', function(){
-      glp.addGroup('test').task('testTask')
-      glp.addGroup('testa').task('testTaska')
+      glp.group('test').task('testTask')
+      glp.group('testa').task('testTaska')
       let res =`test
 test:testTask
 testa
@@ -66,8 +66,8 @@ testa:testTaska`
     })
 
     it('should create a json object', function(){
-      glp.addGroup('test1').task('testTask1')
-      glp.addGroup('test2').task('testTask2')
+      glp.group('test1').task('testTask1')
+      glp.group('test2').task('testTask2')
       expect( glp.toJSON() ).to.eql({
         test1: { name: 'test1', tasks: {
           testTask1: {

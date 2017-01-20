@@ -7,9 +7,8 @@ describe('unit::deployable-assets::DeployableAssets', function(){
   describe('class', function(){
 
     it('should return an instance', function(){
-      let inst = DeployableAssets.createInstance({prefix: '/wakka'})
-      expect( inst.prefix ).to.equal( '/wakka' )
-      expect( inst.path('a') ).to.equal( '/wakka/a' )
+      DeployableAssets.createInstance({prefix: '/wakka'})
+      expect( DeployableAssets.path('a') ).to.equal( '/wakka/a' )
     })
 
   })

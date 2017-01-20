@@ -63,11 +63,6 @@ describe('unit::deployable-assets::GulpGroup', function(){
       expect( grp.dest ).to.eql( 'test' )
     })
 
-    it('should set a group suffix', function(){
-      expect( grp.setSuffix('test') ).to.eql( 'test' )
-    })
-
-
   })
 
 })

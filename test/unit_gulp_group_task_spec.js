@@ -67,12 +67,19 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
 
     beforeEach( function(){
       tsk = new GulpGroupTask('sometask')
-      tsk.parent = {name: 'parent'}
+      // mock
+      tsk.parent = {name: 'parent', dest: 'abc' }
+    })
+
+    it('should append suffix to parents dest', function(){
+      tsk.setDestSuffix('cde')
+      expect( tsk.dest ).to.equal( 'abc/cde' )
     })
 
     it('createBabelTask', function(){
       expect( tsk.createBabelTask() ).to.equal( true )
     })
+
     it('createBabelSourceMapTask', function(){
       expect( tsk.createBabelSourceMapTask() ).to.equal( true )
     })
@@ -94,6 +101,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     it('createCustom', function(){
       expect( tsk.createCustom() ).to.equal( true )
     })
+
   })
 
 })
