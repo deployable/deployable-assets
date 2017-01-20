@@ -31,6 +31,12 @@ describe('unit::deployable-assets::GulpGroup', function(){
       expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk` )
     })
 
+    it('should turn group with task into string', function(){
+      grp.addTask('atsk')
+      grp.watch('atsk')
+      expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk\nsomegroup:watch` )
+    })
+
     it('should turn two groups into string', function(){
       grp.addTask('tsk1')
       grp.addTask('tsk2')
