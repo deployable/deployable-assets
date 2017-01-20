@@ -1,4 +1,4 @@
-# [deployable-assets](https://github.com/deployable/node-deployable-assets)
+# [Deployable Assets](https://github.com/deployable/node-deployable-assets)
 
 Web Asset Builder. Built on gulp. Supports babel, sass and shell out of the box.
 
