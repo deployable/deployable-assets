@@ -51,7 +51,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     it('should turn the task into a string', function(){
       tsk.addSrc('src')
       tsk.setDest('dest')
-      expect( tsk.toString() ).to.eql('Task:sometask')
+      expect( tsk.toString() ).to.eql('sometask')
     })
 
   })

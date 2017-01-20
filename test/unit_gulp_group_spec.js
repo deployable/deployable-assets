@@ -23,12 +23,12 @@ describe('unit::deployable-assets::GulpGroup', function(){
     })
 
     it('should turn group into string', function(){
-      expect( grp.toString() ).to.equal( 'Group:somegroup' )
+      expect( grp.toString() ).to.equal( 'somegroup' )
     })
 
     it('should turn group with task into string', function(){
       grp.addTask('atsk')
-      expect( grp.toString() ).to.equal( `Group:somegroup\nTask:atsk` )
+      expect( grp.toString() ).to.equal( `somegroup\nsomegroup:atsk` )
     })
 
     it('should turn two groups into string', function(){

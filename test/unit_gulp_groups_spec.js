@@ -28,13 +28,13 @@ describe('unit::deployable-assets::GulpGroups', function(){
 
     it('should turn one group into string', function(){
       grps.addGroup('grp')
-      expect( grps.toString() ).to.equal( `Group:grp` )
+      expect( grps.toString() ).to.equal( `grp` )
     })
 
     it('should turn two groups into string', function(){
       grps.addGroup('grp1')
       grps.addGroup('grp2')
-      expect( grps.toString() ).to.equal( `Group:grp1\nGroup:grp2` )
+      expect( grps.toString() ).to.equal( `grp1\ngrp2` )
     })
 
     it('should turn two groups into string', function(){
