@@ -2,14 +2,17 @@
 
 ## Web Asset Builder. 
 
-Built on [gulp](https://gulpjs.com).
+Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/), 
+ [sass](https://sass-lang.com/) and `$ shell` out of the box.
 
-Supports [babel](https://babeljs.io/), [sass](https://sass-lang.com/) and `$ shell` out of the box.
+Organises your gulp tasks into groups of tasks, `groupname:taskname`
 
-Organises gulp tasks into `groupname:taskname`
+Group destination can filter down to tasks if you don't override it.
 
-Watches can be added to groups, or tasks and source files are monitored automatically.
-No need to write extra task, just call `.watch()` and a `:watch` gulp task will be appended.
+Group sources filter up so you can access all group sources programatically.
+
+A `:watch` task can be added to groups, or tasks. This will monitor the src files
+and build as needed. 
 
 Async sequences can be applied to a group to run sub tasks in order.
 
@@ -24,6 +27,9 @@ Async sequences can be applied to a group to run sub tasks in order.
 ### Creating a gulp definition
 
 gulpfile.js
+
+*Note*: Adding the type of gulp task must always be the last step of a task chain. This 
+step builds a gulp task from the previously set varaibles.  
 
 ```javascript
 
