@@ -132,17 +132,18 @@ gulp assets:watch # long running wathcing build
 
 ### Asset Helpers
 
-The package also provides a helper class to use in your application to refernce assets.
-All references to your asset paths should be replaced by the helper so assets can be served
-from any location, including the possibiilty of moving them to a CDN.
+The [deployable-asset](https://github.com/deployable/node-deployable-asset) 
+package provides helper functionsto use in your application to refernce assets.
+All references to your asset paths should be replaced by the helper so assets 
+can be served from any location, including the possibiilty of moving them to a CDN.
 
 ```javascript
 
-const { DeployableAssets }  = require('deployable-assets')
+const assetHelpers  = require('deployable-assets')({ prefix: 'https://cdn.com/3e4a6' })
 
-DeployableAssets.js('js/test.js') // =>
-DeployableAssets.css('css/test.css') // =>
-DeployableAssets.path('fonts/arial.webf') // =>
+assetHelpers.js('js/test.js') // => https://cdn.com/3e4a6/js/test.js
+assetHelpers.css('css/test.css') // => https://cdn.com/3e4a6/css/test.css
+assetHelpers.path('fonts/arial.webf') // => https://cdn.com/3e4a6/fonts/arial.webf
 
 ```
 
