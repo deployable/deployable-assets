@@ -29,7 +29,7 @@
     "istanbul": "~0.4.5",
     "mocha": "~3.1.2",
     "sinon": "~1.17.6",
-    "deployable-asset": "~0.9.0-0"
+    "deployable-asset": "~0.9.1-0"
   },
   "dependencies": {
     "deployable-errors": "~0.8.0",

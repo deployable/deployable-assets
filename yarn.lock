@@ -501,6 +501,10 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
 
+deployable-asset@~0.9.1-0:
+  version "0.9.1-1"
+  resolved "https://registry.npmjs.org/deployable-asset/-/deployable-asset-0.9.1-1.tgz#c56d5caaaaceb1be7227b1728745b2ff8da41365"
+
 deployable-errors@~0.8.0:
   version "0.8.0"
   resolved "https://registry.npmjs.org/deployable-errors/-/deployable-errors-0.8.0.tgz#1fe769f8d284fd9aa92816ee9b376e53267f3b80"
@@ -2195,13 +2199,9 @@ resolve-dir@^0.1.0:
     expand-tilde "^1.2.2"
     global-modules "^0.2.3"
 
-resolve@1.1.x:
+resolve@1.1.x, resolve@^1.1.6, resolve@^1.1.7:
   version "1.1.7"
   resolved "https://registry.npmjs.org/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
-
-resolve@^1.1.6, resolve@^1.1.7:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/resolve/-/resolve-1.2.0.tgz#9589c3f2f6149d1417a40becc1663db6ec6bc26c"
 
 right-align@^0.1.1:
   version "0.1.3"
