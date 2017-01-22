@@ -501,9 +501,9 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
 
-deployable-asset@~0.9.1-0:
-  version "0.9.1-1"
-  resolved "https://registry.npmjs.org/deployable-asset/-/deployable-asset-0.9.1-1.tgz#c56d5caaaaceb1be7227b1728745b2ff8da41365"
+deployable-asset@~0.9.1:
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/deployable-asset/-/deployable-asset-0.9.1.tgz#6cf4b7d85860e6fc7c647623270bbae26024eaf9"
 
 deployable-errors@~0.8.0:
   version "0.8.0"
