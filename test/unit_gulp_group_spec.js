@@ -9,7 +9,9 @@ describe('unit::deployable-assets::GulpGroup', function(){
     let grp = null
 
     beforeEach( function(){
-      grp = new GulpGroup('somegroup')
+      // GulpGroups Mock
+      let gulp_groups = { dest: 'parentdest' }
+      grp = new GulpGroup('somegroup', gulp_groups)
     })
 
     it('should create an instance', function(){
@@ -63,6 +65,11 @@ describe('unit::deployable-assets::GulpGroup', function(){
     it('should set a group dest', function(){
       grp.setDest('test')
       expect( grp.dest ).to.eql( 'test' )
+    })
+
+    it('should set a group dest', function(){
+      grp.setDestSuffix('test')
+      expect( grp.dest ).to.eql( 'parentdest/test' )
     })
 
     it('should add a group to the group', function(){
