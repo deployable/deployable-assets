@@ -1,0 +1,9 @@
+{
+  "name": "deployable-assets-fixture",
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "bootstrap-sass": "3.3.7",
+    "jquery": "3.1.1"
+  }
+}
+

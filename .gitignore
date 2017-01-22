@@ -5,4 +5,6 @@ yarn-error.log
 test/output
 pkg/
 tmp/
-
+test/fixture/bower_components/
+test/fixture/app/assets/vendor/
+test/fixture/app/public
