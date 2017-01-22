@@ -5,9 +5,19 @@ const { DeployableGulp } = require('../')
 describe('unit::deployable-assets::DeployableGulp', function(){
 
   describe('class', function(){
+   
+    let dgulp = null
+
+    before(function(){
+      dgulp = DeployableGulp.setup()
+    })
+ 
+    it('should create an instance', function(){
+      expect( dgulp ).to.be.ok
+    })
 
     it('should create an instance', function(){
-      expect( DeployableGulp.create() ).to.be.ok
+      expect( dgulp.gulp ).to.be.ok
     })
 
   })
