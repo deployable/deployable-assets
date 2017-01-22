@@ -68,23 +68,45 @@ testa:testTaska`
     it('should create a json object', function(){
       glp.group('test1').task('testTask1')
       glp.group('test2').task('testTask2')
+      glp.group('test2').group('test22').task('testTask22')
       expect( glp.toJSON() ).to.eql({
-        test1: { name: 'test1', tasks: {
-          testTask1: {
-            dest: undefined,
-            globs: [],
-            group: 'test1',
-            name: 'testTask1'
+        test1: {
+          groups: {},
+          name: 'test1',
+          tasks: {
+            testTask1: {
+              dest: undefined,
+              globs: [],
+              group: 'test1',
+              name: 'testTask1'
+            }
           }
-        }},
-        test2: { name: 'test2', tasks: {
-          testTask2: {
-            dest: undefined,
-            globs: [],
-            group: 'test2',
-            name: 'testTask2'
+        },
+        test2: {
+          name: 'test2',
+          groups: {
+            'test22': {
+              groups: {},
+              name: 'test22',
+              tasks: {
+                testTask22: {
+                  dest: undefined,
+                  globs: [],
+                  group: 'test22',
+                  name: 'testTask22',
+                }
+              }
+            }
+          },
+          tasks: {
+            testTask2: {
+              dest: undefined,
+              globs: [],
+              group: 'test2',
+              name: 'testTask2'
+            }
           }
-        }}
+        }
       })
     })
 

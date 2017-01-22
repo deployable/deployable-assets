@@ -46,10 +46,12 @@ describe('unit::deployable-assets::GulpGroup', function(){
     it('should turn two groups into string', function(){
       grp.task('tsk1')
       grp.task('tsk2')
+      grp.group('grp1')
       let json = grp.toJSON()
-      expect( json ).to.have.keys('name', 'tasks')
+      expect( json ).to.have.keys('name', 'tasks', 'groups')
       expect( json.name ).to.equal( 'somegroup' )
       expect( json.tasks ).to.have.keys('tsk1', 'tsk2')
+      expect( json.groups ).to.have.keys('grp1')
     })
 
     it('should get globs from tasks', function(){
