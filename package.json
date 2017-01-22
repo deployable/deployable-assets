@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
     "deployable-errors": "~0.8.0",
     "gulp": "~3.9.1",
     "gulp-babel": "~6.1.2",
