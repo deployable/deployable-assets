@@ -63,6 +63,23 @@ describe('unit::deployable-assets::GulpGroup', function(){
       expect( grp.dest ).to.eql( 'test' )
     })
 
+    it('should add a group to the group', function(){
+      let new_grp = grp.group('test')
+      expect( grp.group('test') ).to.eql( new_grp )
+    })
+
+    it('shouldn\'t add a group when task already exists', function(){
+      grp.group('testtask')
+      let fn = () => grp.task('testtask')
+      expect( fn ).to.throw(/already has a group named testtask/)
+    })
+
+    it('shouldn\'t add a task when group already exists', function(){
+      grp.task('testgroup')
+      let fn = () => grp.group('testgroup')
+      expect( fn ).to.throw(/already has a task named testgroup/)
+    })
+
   })
 
 })
