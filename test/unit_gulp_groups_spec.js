@@ -9,7 +9,8 @@ describe('unit::deployable-assets::GulpGroups', function(){
     let grps = null
 
     beforeEach( function(){
-      grps = new GulpGroups()
+      let rgu = { gulp: require('gulp') }
+      grps = new GulpGroups('', rgu, rgu)
     })
 
     it('should create an instance', function(){

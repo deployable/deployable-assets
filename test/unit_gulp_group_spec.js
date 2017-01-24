@@ -11,7 +11,8 @@ describe('unit::deployable-assets::GulpGroup', function(){
     beforeEach( function(){
       // GulpGroups Mock
       let gulp_groups = { dest: 'parentdest' }
-      grp = new GulpGroup('somegroup', gulp_groups)
+      let rootgulp = { gulp: require('gulp') }
+      grp = new GulpGroup('somegroup', gulp_groups, rootgulp)
     })
 
     it('should create an instance', function(){

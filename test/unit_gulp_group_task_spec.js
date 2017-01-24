@@ -9,7 +9,9 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     let tsk = null
 
     beforeEach( function(){
-      tsk = new GulpGroupTask('sometask')
+      let group = { name: 'tgroup', dest: 'parentdest' }
+      let rootgulp = { gulp: require('gulp') }
+      tsk = new GulpGroupTask('sometask', group, rootgulp)
     })
 
     it('should create an instance', function(){
@@ -45,6 +47,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
       expect( tsk.toJSON() ).to.eql({
         name: 'sometask',
         globs: ['src'],
+        group: 'tgroup',
         dest: 'dest'
       })
     })
@@ -56,7 +59,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     it('should turn the task into a string', function(){
       tsk.addSrc('src')
       tsk.setDest('dest')
-      expect( tsk.toString() ).to.eql('sometask')
+      expect( tsk.toString() ).to.eql('tgroup:sometask')
     })
 
   })
@@ -66,7 +69,9 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     let tsk = null
 
     beforeEach( function(){
-      tsk = new GulpGroupTask('sometask')
+      let rgu = { gulp: require('gulp') }
+      let grp = { name: 'tgroup' }
+      tsk = new GulpGroupTask('sometask', grp, rgu)
       // mock
       tsk.parent = {name: 'parent', dest: 'abc' }
     })
