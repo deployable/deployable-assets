@@ -8,3 +8,4 @@ tmp/
 test/fixture/bower_components/
 test/fixture/app/assets/vendor/
 test/fixture/app/public
+test/fixture/dist
