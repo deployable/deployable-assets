@@ -9,7 +9,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     let tsk = null
 
     beforeEach( function(){
-      let group = { name: 'tgroup', dest: 'parentdest' }
+      let group = { name: 'tgroup', dest: 'parentdest', fullName: ()=>'tgroup' }
       let rootgulp = { gulp: require('gulp') }
       tsk = new GulpGroupTask('sometask', group, rootgulp)
     })
@@ -69,11 +69,11 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     let tsk = null
 
     beforeEach( function(){
-      let rgu = { gulp: require('gulp') }
-      let grp = { name: 'tgroup' }
-      tsk = new GulpGroupTask('sometask', grp, rgu)
       // mock
-      tsk.parent = {name: 'parent', dest: 'abc' }
+      let rgu = { gulp: require('gulp') }
+      let grp = { fullName: ()=>'tgroup', name: 'tgroup', dest: 'abc' }
+      // class
+      tsk = new GulpGroupTask('sometask', grp, rgu)
     })
 
     it('should append suffix to parents dest', function(){
