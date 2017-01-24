@@ -7,5 +7,8 @@ pkg/
 tmp/
 test/fixture/bower_components/
 test/fixture/app/assets/vendor/
+test/fixture/app/static/assets/
 test/fixture/app/public
 test/fixture/dist
+test/fixture/node_modules
+.sass-cache
