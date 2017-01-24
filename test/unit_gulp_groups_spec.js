@@ -9,7 +9,7 @@ describe('unit::deployable-assets::GulpGroups', function(){
     let grps = null
 
     beforeEach( function(){
-      let rgu = { gulp: require('gulp') }
+      let rgu = { fullName: ()=> '', gulp: require('gulp') }
       grps = new GulpGroups('', rgu, rgu)
     })
 
