@@ -11,7 +11,7 @@
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
     "test:gulp": "gulp --gulpfile test/fixture/gulpfile.js assets",
     "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
-    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm test; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
+    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm test; npm run test:gulp; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
   },
   "repository": {
     "type": "git",
