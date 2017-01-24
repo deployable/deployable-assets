@@ -4,7 +4,9 @@
   "description": "Deployable web asset management",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "npm run test:unit && npm run test:int",
+    "test:unit": "mocha test/unit_*_spec.js",
+    "test:int": "mocha test/int_*_spec.js",
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
     "test:gulp": "gulp --gulpfile test/fixture/gulpfile.js assets",
