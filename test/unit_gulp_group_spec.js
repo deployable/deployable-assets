@@ -10,7 +10,7 @@ describe('unit::deployable-assets::GulpGroup', function(){
 
     beforeEach( function(){
       // GulpGroups Mock
-      let gulp_groups = { fullName: ()=>'', dest: 'parentdest' }
+      let gulp_groups = { full_name: '', dest: 'parentdest' }
       let rootgulp = { gulp: require('gulp') }
       grp = new GulpGroup('somegroup', gulp_groups, rootgulp)
     })

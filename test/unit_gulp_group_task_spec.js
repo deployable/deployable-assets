@@ -9,7 +9,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     let tsk = null
 
     beforeEach( function(){
-      let group = { name: 'tgroup', dest: 'parentdest', fullName: ()=>'tgroup' }
+      let group = { name: 'tgroup', dest: 'parentdest', full_name: 'tgroup' }
       let rootgulp = { gulp: require('gulp') }
       tsk = new GulpGroupTask('sometask', group, rootgulp)
     })
@@ -71,7 +71,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     beforeEach( function(){
       // mock
       let rgu = { gulp: require('gulp') }
-      let grp = { fullName: ()=>'tgroup', name: 'tgroup', dest: 'abc' }
+      let grp = { full_name: 'tgroup', name: 'tgroup', dest: 'abc' }
       // class
       tsk = new GulpGroupTask('sometask', grp, rgu)
     })
