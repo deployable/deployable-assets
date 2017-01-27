@@ -974,9 +974,9 @@ deployable-errors@~0.8.0:
   version "0.8.0"
   resolved "https://registry.npmjs.org/deployable-errors/-/deployable-errors-0.8.0.tgz#1fe769f8d284fd9aa92816ee9b376e53267f3b80"
 
-deployable-test@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/deployable-test/-/deployable-test-0.0.3.tgz#a7590cb3033a8c8237aee018fb269818f0278101"
+deployable-test@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/deployable-test/-/deployable-test-0.0.4.tgz#60fda8fd49c965cc5fe39c22b4c0b0efe116434e"
   dependencies:
     bluebird "^3.0.1"
     chai-as-promised "^6.0.0"
