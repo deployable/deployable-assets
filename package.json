@@ -7,11 +7,12 @@
     "test": "npm run test:unit && npm run test:int",
     "test:unit": "mocha test/unit_*_spec.js",
     "test:int": "mocha test/int_*_spec.js",
+    "test:watch": "mocha --reporter min -w test/unit_*_spec.js test/int_*_spec.js",
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
     "test:gulp": "gulp --gulpfile test/fixture/gulpfile.js assets",
-    "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
-    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm test; npm run test:gulp; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
+    "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
+    "release:patch": "set -uex; rm -rf node_modules; yarn install; npm test; npm run test:gulp; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
   },
   "repository": {
     "type": "git",
@@ -36,10 +37,12 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "chai": "~3.5.0",
+    "chai-fs": "^1.0.0",
     "deployable-asset": "~0.9.1",
+    "deployable-test": "0.0.3",
     "istanbul": "~0.4.5",
     "jquery": "^3.1.1",
-    "mocha": "~3.1.2",
+    "mocha": "^3.2.0",
     "sinon": "~1.17.6"
   },
   "dependencies": {

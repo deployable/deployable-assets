@@ -11,6 +11,7 @@ describe('unit::deployable-assets::GulpGroupTask', function(){
     beforeEach( function(){
       let group = { name: 'tgroup', dest: 'parentdest', full_name: 'tgroup' }
       let rootgulp = { gulp: require('gulp') }
+      rootgulp.gulp.reset()
       tsk = new GulpGroupTask('sometask', group, rootgulp)
     })
 

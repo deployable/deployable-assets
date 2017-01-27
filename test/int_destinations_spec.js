@@ -1,21 +1,26 @@
 const expect = require('chai').expect
 const { TestEnv } = require('deployable-test')
 
-const { Gulp } = require('../')
+const { DeployableGulp } = require('../')
 
 
-describe('integration::deployable-assets:: Asset Destination', function(){
+describe('integration::deployable-assets::Asset Destination', function(){
 
-  describe('inheritence', function(){
+  describe('Inheritence', function(){
 
     let assets = null
 
-    before(function(){
-      assets = new Gulp()
+    beforeEach(function(){
+      assets = new DeployableGulp()
+      assets.setDest('whatever')
+      assets.gulp.reset()
+    })
+
+    after(function(){
+      assets.gulp.reset()
     })
 
     it('should set the assets default dist path to `whatever`', function(){
-      assets.setDistPath('whatever')
       expect(assets.dest).to.equal('whatever')
     })
 
@@ -24,10 +29,10 @@ describe('integration::deployable-assets:: Asset Destination', function(){
     })
 
     it('should only have a default task', function(){
-      expect( assets.gulp.tasks ).to.have.keys( 'default' )
+      expect( assets.gulp.tasks ).to.eql({})
     })
 
-    it('should append a destination suffix', function(){
+    it('should append a task destination suffix to the main asset destination', function(){
       let tsk = assets
         .group('destfirst')
         .task('one').setDestSuffix('one')

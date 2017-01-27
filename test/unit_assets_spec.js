@@ -1,82 +1,82 @@
 const expect = require('chai').expect
-const { DeployableGulp } = require('../')
+const { Assets } = require('../')
 
 
-describe('unit::deployable-assets::DeployableGulp', function(){
+describe('unit::deployable-assets::Assets::', function(){
 
   describe('class', function(){
 
-    let glp = new DeployableGulp()
+    let ass = new Assets()
 
     beforeEach( function(){
-      glp = new DeployableGulp()
-      glp.gulp.reset()
+      ass = new Assets()
+      ass.gulp.reset()
     })
 
     it('should create an instance', function(){
-      expect( glp ).to.be.ok
+      expect( ass ).to.be.ok
     })
 
     it('should create a group', function(){
-      let group = glp.group('test')
+      let group = ass.group('test')
       expect( group ).to.be.ok
     })
 
     it('should add a new task to group', function(){
-      let group = glp.group('test')
+      let group = ass.group('test')
       expect( group.task('testTask') ).to.be.ok
     })
 
     it('should get a src via addSrc', function(){
-      let task = glp.group('test').task('testTask')
+      let task = ass.group('test').task('testTask')
       expect( task.addSrc('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a src via addGlob', function(){
-      let task = glp.group('test').task('testTask')
+      let task = ass.group('test').task('testTask')
       expect( task.addGlob('test/fixture/one') ).to.equal(task)
     })
 
     it('should add a dest', function(){
-      let task = glp.group('test').task('testTask')
+      let task = ass.group('test').task('testTask')
       expect( task.setDest('test/fixture/out') ).to.equal(task)
     })
 
     it('should add a copy task', function(){
-      let task = glp.group('test').task('testTask')
+      let task = ass.group('test').task('testTask')
       expect( task.createCopyTask() ).to.be.true
     })
 
     it('should create a string', function(){
-      glp.group('test').task('testTask')
-      glp.group('testa').task('testTaska')
+      ass.group('test').task('testTask')
+      ass.group('testa').task('testTaska')
       let res =`test
 test:testTask
 testa
 testa:testTaska`
-      expect( glp.toString() ).to.equal(res)
+      expect( ass.toString() ).to.equal(res)
     })
 
 
     it('should add a glob to a task', function(){
-      glp.addGlob()
+      ass.addGlob()
     })
 
     it('should get the globs for a group', function(){
-      glp.groupGlobs()
+      ass.groupGlobs()
     })
 
     it('should create a json object', function(){
-      glp.group('test1').task('testTask1')
-      glp.group('test2').task('testTask2')
-      glp.group('test2').group('test22').task('testTask22')
-      expect( glp.toJSON() ).to.eql({
+      ass.group('test1').task('testTask1')
+      ass.group('test2').task('testTask2')
+      ass.group('test2').group('test22').task('testTask22')
+      expect( ass.toJSON() ).to.eql({
         test1: {
           groups: {},
           name: 'test1',
           tasks: {
             testTask1: {
-              dest: undefined,
+              dest: 'app/static/assets',
               globs: [],
               group: 'test1',
               name: 'testTask1'
@@ -91,17 +91,17 @@ testa:testTaska`
               name: 'test22',
               tasks: {
                 testTask22: {
-                  dest: undefined,
+                  dest: 'app/static/assets',
                   globs: [],
                   group: 'test22',
-                  name: 'testTask22',
+                  name: 'testTask22'
                 }
               }
             }
           },
           tasks: {
             testTask2: {
-              dest: undefined,
+              dest: 'app/static/assets',
               globs: [],
               group: 'test2',
               name: 'testTask2'
