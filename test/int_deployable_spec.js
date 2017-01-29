@@ -104,15 +104,18 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
           .to.be.a.directory().with.files([
             'site.pack.js',
             'site.pack.js.map',
-            'bootstrap.js',
-//            'bootstrap.js.map',
-            'bootstrap.min.js',
-//            'bootstrap.min.js.map',
-            'jquery.js',
-            'jquery.slim.js',
             'site.js',
             'site.js.map'
           ])
+
+        expect( path.join(dir,'app','static','assets','vendor') )
+          .to.be.a.directory().with.files([
+            'bootstrap.js',
+            'bootstrap.min.js',
+            'jquery.js',
+            'jquery.slim.js',
+          ])
+
         done()
       })
       gulp.start([`${task}-test`])
