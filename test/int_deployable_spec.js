@@ -1,8 +1,8 @@
+/* global expect */
 const { TestEnv } = require('deployable-test')
-const expect = require('chai').expect
-const { DeployableAssets } = require('../')
 const path = require('path')
-require('chai').use(require('chai-fs'))
+
+const { DeployableAssets } = require('../')
 
 
 describe('integration::deployable-assets::DeployableAssets::', function(){
@@ -54,12 +54,68 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
       dassets = new DeployableAssets()
     })
 
+    beforeEach(function(){
+      dassets.gulp.reset()
+    })
+
     it('should create an instance', function(){
       expect( dassets ).to.be.ok
     })
 
     it('should have a gulp object attached', function(){
       expect( dassets.gulp ).to.be.ok
+    })
+
+    it('should create jquery assets task from node', function(){
+      expect( dassets.createAssetsJquery({ source: 'node' }) ).to.be.ok
+    })
+
+    it('should create jquery assets task from bower', function(){
+      expect( dassets.createAssetsJquery({ source: 'bower' }) ).to.be.ok
+    })
+
+    it('should create jquery assets task from bower', function(){
+      expect( dassets.createAssetsJqueryBower() ).to.be.ok
+    })
+
+    it('should create jquery assets task with a custom destination', function(){
+      expect( dassets.gulp.tasks['assets:jquery'] ).to.be.undefined
+      expect( dassets.createAssetsJquery({ source: 'node', dest: 'other' }) ).to.be.ok
+      expect( dassets.gulp.tasks['assets:jquery'] ).to.be.ok
+      expect( dassets.group('assets').task('jquery').dest ).to.equal( 'other' )
+    })
+
+    it('should fail create jquery asset task with no options', function(){
+      let fn = () => dassets.createAssetsJquery()
+      expect( fn ).to.throw(/No source passed in options/)
+    })
+
+    it('should create bootstrap assets task from node', function(){
+      expect( dassets.createAssetsBootstrap3Bower() ).to.be.ok
+    })
+
+    it('should create bootstrap assets task from node', function(){
+      expect( dassets.createAssetsBootstrap3Node() ).to.be.ok
+    })
+
+    it('should create bootstrap3 assets task from node with destination', function(){
+      expect( dassets.createAssetsBootstrap3Node({ dest: 'other' }) ).to.be.ok
+    })
+
+    it('should create bootstrap3 sass assets task from node', function(){
+      expect( dassets.createAssetsBootstrap3SassNode() ).to.be.ok
+    })
+
+    it('should create bootstrap3 sass assets task from node with a destination', function(){
+      expect( dassets.createAssetsBootstrap3SassNode({ dest: 'other' }) ).to.be.ok
+    })
+
+    it('should create bootstrap3 sass assets task from bower', function(){
+      expect( dassets.createAssetsBootstrap3SassBower() ).to.be.ok
+    })
+
+    it('should create bootstrap3 sass assets task from bower with a destination', function(){
+      expect( dassets.createAssetsBootstrap3SassBower({ dest: 'other' }) ).to.be.ok
     })
 
   })

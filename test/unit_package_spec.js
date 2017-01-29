@@ -1,5 +1,5 @@
+/* global expect */
 const { initial, DeployableGulp, GulpGroups, GulpGroup, GulpGroupTask, DeployableAssets } = require('../')
-const expect = require('chai').expect
 
 describe('unit::deployable-assets', function(){
 

@@ -1,4 +1,4 @@
-const { DeployableGulp } = require('../../')
-const dgulp = DeployableGulp.setup()
+const { DeployableAssets } = require('../../../')
+const dgulp = DeployableAssets.setup()
 const gulp = dgulp.gulp
 

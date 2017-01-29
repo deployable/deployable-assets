@@ -5,10 +5,9 @@ yarn-error.log
 test/output
 pkg/
 tmp/
-test/fixture/bower_components/
-test/fixture/app/assets/vendor/
-test/fixture/app/static/assets/
-test/fixture/app/public
-test/fixture/dist
-test/fixture/node_modules
+test/fixture/module/bower_components/
+test/fixture/module/app/assets/vendor/
+test/fixture/module/app/static/assets/
+test/fixture/module/app/public
+test/fixture/module/node_modules
 .sass-cache

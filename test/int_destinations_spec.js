@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+/* global expect */
 const { TestEnv } = require('deployable-test')
 
 const { DeployableGulp } = require('../')
