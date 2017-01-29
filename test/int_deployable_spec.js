@@ -92,13 +92,27 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
 
     it('should run the build task via dummy', function(done){
       gulp.task(`${task}-test`, [task], () => {
-        expect( dir ).to.be.a.directory().with.files(['bower.json','gulpfile.js','package.json'])
+        expect( dir ).to.be.a.directory().with.files([
+          'bower.json',
+          'gulpfile.js',
+          'package.json'
+        ])
 
         expect( path.join(dir,'app','assets','vendor','bootstrap-sass') )
-          .to.be.a.directory().with.files(['_bootstrap.scss'])
+          .to.be.a.directory().with.files([
+            '_bootstrap.scss'
+          ])
 
         expect( path.join(dir,'app','static','assets','css') )
-          .to.be.a.directory().with.files(['site.css', 'site.css.map'])
+          .to.be.a.directory().with.files([
+            'site.css',
+            'site.css.map'
+          ])
+
+        expect( path.join(dir,'app','static','assets','font') )
+          .to.be.a.directory().with.files([
+            'glyphicons-halflings-regular.ttf'
+          ])
 
         expect( path.join(dir,'app','static','assets','js') )
           .to.be.a.directory().with.files([
