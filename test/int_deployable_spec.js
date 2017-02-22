@@ -165,7 +165,7 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
             'site.css.map'
           ])
 
-        expect( path.join(dir,'app','static','assets','font') )
+        expect( path.join(dir,'app','static','assets','fonts') )
           .to.be.a.directory().with.files([
             'glyphicons-halflings-regular.ttf'
           ])
