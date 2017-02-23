@@ -2,8 +2,8 @@
 
 ## Web Asset Builder.
 
-Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/),
- [sass](https://sass-lang.com/) and `$ shell` out of the box.
+Built on [gulp](https://gulpjs.com). Supports [babel](https://babeljs.io/), [webpack](https://webpack.github.io/),
+ [sass](https://sass-lang.com/) and `shell` commands out of the box.
 
 Organises your gulp tasks into groups of tasks, `groupname:taskname`
 
@@ -103,8 +103,8 @@ group.sequence( 'copyit', [ 'buildit', 'otherthing' ] )
 
 ### Deployable Gulp
 
-The package provides the Deployable gulp setup as a class which includes jquery, bootstrap, bootstrap-sass, babel
-and the tasks to build sources into assets.
+The package provides the Deployable Assets gulp setup as a class which includes jquery, bootstrap, bootstrap-sass, babel
+and the pre defined tasks to build sources into assets.
 
 ```javascript
 
@@ -132,9 +132,9 @@ gulp assets:watch # long running wathcing build
 
 ### Asset Helpers
 
-The [deployable-asset](https://github.com/deployable/node-deployable-asset) 
+The [deployable-asset](https://github.com/deployable/node-deployable-asset)
 package provides helper functionsto use in your application to refernce assets.
-All references to your asset paths should be replaced by the helper so assets 
+All references to your asset paths should be replaced by the helper so assets
 can be served from any location, including the possibiilty of moving them to a CDN.
 
 ```javascript
@@ -166,4 +166,5 @@ deployable-assets is released under the MIT license.
 Copyright 2016 Matt Hoyle - code aatt deployable.co
 
 https://github.com/deployable/node-deployable-assets
+https://deployable.co/code/node-deployable-assets
 
