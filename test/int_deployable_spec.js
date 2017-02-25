@@ -146,13 +146,15 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
       expect( gulp.tasks[task] ).to.be.ok
     })
 
-    it('should run the build task via dummy', function(done){
+    // Gulp 3. Gulp 4 should allow the task function to be called directly
+    it('should run the build task via a dummy task', function(done){
       gulp.task(`${task}-test`, [task], () => {
-        expect( dir ).to.be.a.directory().with.files([
-          'bower.json',
-          'gulpfile.js',
-          'package.json'
-        ])
+        expect( dir )
+          .to.be.a.directory().with.files([
+            'bower.json',
+            'gulpfile.js',
+            'package.json'
+          ])
 
         expect( path.join(dir,'app','assets','vendor','bootstrap-sass') )
           .to.be.a.directory().with.files([
@@ -183,7 +185,7 @@ describe('integration::deployable-assets::DeployableAssets::', function(){
             'bootstrap.js',
             'bootstrap.min.js',
             'jquery.js',
-            'jquery.slim.js',
+            'jquery.slim.js'
           ])
 
         done()
