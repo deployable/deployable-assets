@@ -18,9 +18,11 @@ Async sequences can be applied to a group to run sub tasks in order.
 
 ## Install
 
-    npm install deployable-assets --save-dev
+    npm install @deployable/assets --save-dev
+    npm install @deployable/asset --save
 
-    yarn add deployable-assets --dev
+    yarn add @deployable/assets --dev
+    yarn add @deployable/asset
 
 ## Usage
 
@@ -33,7 +35,7 @@ step builds a gulp task from the previously set varaibles.
 
 ```javascript
 
-const { Gulp } = require('deployable-assets')
+const { Gulp } = require('@deployable/assets')
 const { gulp } = Gulp
 
 let gulp_def = new Gulp()
@@ -132,14 +134,14 @@ gulp assets:watch # long running wathcing build
 
 ### Asset Helpers
 
-The [deployable-asset](https://github.com/deployable/node-deployable-asset)
+The [@deployable/asset](https://github.com/deployable/node-deployable-asset)
 package provides helper functionsto use in your application to refernce assets.
 All references to your asset paths should be replaced by the helper so assets
 can be served from any location, including the possibiilty of moving them to a CDN.
 
 ```javascript
 
-const assetHelpers  = require('deployable-assets')({ prefix: 'https://cdn.com/3e4a6' })
+const assetHelpers  = require('@deployable/asset')({ prefix: 'https://cdn.com/3e4a6' })
 
 assetHelpers.js('js/test.js') // => https://cdn.com/3e4a6/js/test.js
 assetHelpers.css('css/test.css') // => https://cdn.com/3e4a6/css/test.css

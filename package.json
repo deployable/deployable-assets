@@ -1,5 +1,5 @@
 {
-  "name": "deployable-assets",
+  "name": "@deployable/assets",
   "version": "0.10.2",
   "description": "Deployable web asset management",
   "main": "lib/index.js",
@@ -11,8 +11,8 @@
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
     "test:gulp": "gulp --gulpfile test/fixture/module/gulpfile.js build",
-    "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
-    "release:patch": "set -uex; rm -rf node_modules; yarn install; npm test; npm run test:gulp; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
+    "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing --access public",
+    "release:patch": "set -uex; rm -rf node_modules; yarn install; yarn test; yarn run test:gulp; yarn run test:coverage; npm version patch; git push; npm publish --access public; git push --tags;"
   },
   "repository": {
     "type": "git",
